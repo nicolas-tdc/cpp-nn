@@ -11,8 +11,8 @@ private:
 
 public:
     NeuronLayer(
-        int neurons_count,
         int weights_count,
+        int neurons_count,
         ActivatorType activator_type
     );
     ~NeuronLayer();
