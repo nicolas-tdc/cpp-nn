@@ -9,15 +9,20 @@ class NeuralNetwork {
 private:
     int layers_count {0};
     double learning_rate {0.01};
-    std::vector<NeuronLayer> NeuronLayers;
+    std::vector<NeuronLayer*> neuron_layers;
 
 public:
-    NeuralNetwork();
+    NeuralNetwork(
+        int inputs_count,
+        int layers_count,
+        int neurons_per_layer,
+        int outputs_count
+    );
     ~NeuralNetwork();
 
     void add_layer(
-        int neurons_count,
         int weights_count,
+        int neurons_count,
         ActivatorType activator_type
     );
 
