@@ -10,14 +10,14 @@ private:
     std::vector<double> weights;
     double bias {0};
 
-    Activator* activator;
-
     double value {0};
     double error_delta {0};
 
 public:
     Neuron(int weights_count, ActivatorType activator_type);
     ~Neuron();
+
+    Activator* activator;
 
     std::vector<double> get_weights(void) { return weights; }
     double get_bias(void) { return bias; }
