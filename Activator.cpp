@@ -34,28 +34,29 @@ void Activator::activate(double& input)
     }
 }
 
-void Activator::derive(double& input)
+double Activator::derive(double& input)
 {
     switch (type)
     {
     case ActivatorType::Sigmoid:
         activate(input);
-        input = input * (1.0f - input);
+        return input * (1.0f - input);
         break;
 
     case ActivatorType::ReLu:
         if (input > 0) {
-            input = 1;
+            return 1;
         }
 
-        input = 0;
+        return 0;
         break;
 
     case ActivatorType::Tanh:
-        input = 1 - tanh(input) * tanh(input);
+        return 1 - tanh(input) * tanh(input);
         break;
     
     default:
+        return input;
         break;
     }
 }

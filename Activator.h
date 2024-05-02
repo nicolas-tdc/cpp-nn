@@ -16,5 +16,5 @@ public:
     ~Activator();
 
     void activate(double& input);
-    void derive(double& input);
+    double derive(double& input);
 };
