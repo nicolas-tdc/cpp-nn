@@ -7,6 +7,8 @@
 class NeuralNetwork {
 
 private:
+    int inputs_count {0};
+    int outputs_count {0};
     int layers_count {0};
     double learning_rate {0.01};
     std::vector<NeuronLayer*> neuron_layers;
@@ -30,9 +32,8 @@ public:
     void backward_propagate(std::vector<double> expected);
 
     void train(
-        std::vector<std::vector<float>> training_data,
-        int epoch_count,
-        int outputs_count
+        std::vector<std::vector<double>> training_data,
+        int epoch_count
     );
 
 };
