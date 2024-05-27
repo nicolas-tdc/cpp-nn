@@ -19,7 +19,7 @@ public:
 
     Activator* activator;
 
-    std::vector<double> get_weights(void) { return weights; }
+    std::vector<double>& get_weights(void) { return weights; }
     double get_bias(void) { return bias; }
     double get_value(void) { return value; }
     double get_delta(void) { return error_delta; }
